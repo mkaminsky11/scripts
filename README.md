@@ -4,6 +4,9 @@ some cyberpatriot scripts to make things easier.
 <blockquote>
 Q: WHY TWO VERSIONS?
 <br/>A: because I can.
+
+<br/><br/>Q: WHAT'S UP WITH auth.txt AND admin.txt?
+<br/>A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run users.js, it will tell you what to do. Simple, right?
 </blockquote>
 
 ## NODE.JS version
