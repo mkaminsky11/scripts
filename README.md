@@ -16,6 +16,7 @@ some cyberpatriot scripts to make things easier.
 
 ## HOW TO USE
 ```shell
+sudo apt-get install git
 sudo apt-get install nodejs # install node.js
 sudo apt-get install npm # install npm
 git clone https://github.com/mkaminsky11/cyberpatriot.git
