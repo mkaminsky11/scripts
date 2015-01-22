@@ -42,8 +42,8 @@ configures login stuff, like password length, root login, etc.
 ### malware [done]
 scans for malware and other nasty stuff.
 
-### telnet
-configures telnet.
+### ftp
+configures ftp.
 
 ### users [done]
 changes permissions, removes unauthorized users.
