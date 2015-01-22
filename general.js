@@ -19,7 +19,5 @@ exports.complex = function(command, callback){
 		if(err){
 			console.log("EXEC ERROR: " + err);
 		}
-		sys.puts(stdout);
-		callback(stdout);
 	});
 };
