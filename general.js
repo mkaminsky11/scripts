@@ -3,6 +3,10 @@ var exec = require('child_process').exec;
 
 exports.run = function(command, callback){
 	var child = exec(command, function(err, stdout, stderr){
-		callback(err);
+		if(err){
+			console.log("EXEC ERROR: " + err);
+		}
+		sys.puts(stdout);
+		callback();
 	});
 };
