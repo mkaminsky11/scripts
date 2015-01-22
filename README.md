@@ -1,23 +1,32 @@
 # CYBERPATRIOT #
 some cyberpatriot scripts to make things easier.
 
+## INTRODUCTION
+
 <blockquote>
 WARNING: I am not responsible for ANYTHING that happens if you run this code. There could be bugs that delete stuff, mess things up, etc. I have tested this only on certain configurations. Also, if you get in trouble for using this, it's not my fault either. Tough beans for you.
 </blockquote>
 
-Q: WHAT'S UP WITH auth.txt AND admin.txt?
-A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run users.js, it will tell you what to do. Simple, right?
+###### Q: WHAT'S UP WITH auth.txt AND admin.txt?
+######A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run users.js, it will tell you what to do. Simple, right?
+
+## REQUIREMENTS
+* Ubuntu (tested on 12.04)
+* node.js and npm installed (see [here](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server))
+* guts
 
 ## HOW TO USE
 ```shell
-sudo apt-get install nodejs
+sudo apt-get install nodejs # install node.js
+sudo apt-get install npm # install npm
 git clone https://github.com/mkaminsky11/cyberpatriot.git
 cd cyberpatriot
 cd commands # has all of the commands to run
 node update.js # or whatever other file you want
 ```
 
-Each of the commands do different things, so you can run those that fit the scenario you're dealing with.
+## COMMANDS
+Each of the commands do different things, so you can run those that fit the scenario you're dealing with. Just run the appropriate javascript files.
 
 ### update [done]
 updates things. pretty simple.
@@ -37,7 +46,7 @@ scans for malware and other nasty stuff.
 ### telnet
 configures telnet.
 
-### users
+### users [done]
 changes permissions, removes unauthorized users.
 
 ### lock_root [done]
