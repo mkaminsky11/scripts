@@ -1,10 +1,6 @@
 var run = require("./../general.js").run;
 var fs = require("fs");
 
-//FIRST, LET'S LOCK ROOT
-//======================
-run("passwd -dl root", function(){});
-
 //YOU'RE GOING TO BE EDITING /etc/pam.d/common-password, /etc/pam.d/common-auth, and /etc/login.defs
 //=======================
 //so, make some backups
