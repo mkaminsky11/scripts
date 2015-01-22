@@ -12,7 +12,7 @@ console.log("basic updates done!");
 //NOW OTHER THINGS
 //==================
 //latest firfox, etc
-run("apt-get install libpam-cracklib nmap gufw -y", function(){});
+run("apt-get install libpam-cracklib nmap gufw rkhunter chkrootkit -y", function(){});
 run("apt-get remove firefox -y", function(){
 	run("apt-get install firefox -y", function(){});
 });
