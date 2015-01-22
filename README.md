@@ -44,3 +44,6 @@ configures telnet.
 
 ### users
 changes permissions, removes unauthorized users.
+
+### lock_root [done]
+this locks the root account. It's in its own file so that you don't run it by accident.
