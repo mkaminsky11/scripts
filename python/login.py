@@ -36,3 +36,18 @@ text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 di
 text = '\n'.join([str(x) for x in text])
 common_auth.write(text)
 common_auth.close()
+
+#EDITING login
+#=======================
+text = login.read().strip("\n").split("\n")
+for i, line in enumerate(text):
+    if ("PASS_MIN_DAYS" in line) == True:
+        text[i] = "PASS_MIN_DAYS 7"
+    elif ("PASS_WARN_AGE" in line) == True:
+        text[i] = "PASS_WARN_AGE 14"
+    elif ("PASS_MAX_DAYS" in line) == True:
+        text[i] = "PASS_MAX_DAYS 90"
+
+text = '\n'.join([str(x) for x in text])
+login.write(text)
+login.close()
