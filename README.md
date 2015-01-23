@@ -32,7 +32,7 @@ Each of the commands do different things, so you can run those that fit the scen
 ### update [done]
 updates things. pretty simple.
 
-### ssh
+### ssh [done]
 configures ssh, sshd, etc.
 
 ### samba
