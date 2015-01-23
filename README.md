@@ -27,31 +27,7 @@ sudo python update.py # or whatever other command you want to run
 ```
 
 ## COMMANDS
-Each of the commands do different things, so you can run those that fit the scenario you're dealing with. Just run the appropriate javascript files.
-
-### update [done]
-updates things. pretty simple.
-
-### ssh [done]
-configures ssh, sshd, etc.
-
-### samba
-configures samba
-
-### login [done]
-configures login stuff, like password length, root login, etc.
-
-### malware [done]
-scans for malware and other nasty stuff.
-
-### ftp [done]
-configures ftp.
-
-### users [done]
-changes permissions, removes unauthorized users.
-
-### lock_root [done]
-this locks the root account. It's in its own file so that you don't run it by accident.
+Each of the commands do different things, so you can run those that fit the scenario you're dealing with. Just run the appropriate python files.
 
 ## LICENSE
 
