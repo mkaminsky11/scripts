@@ -24,4 +24,4 @@ subprocess.call("apt-get install firefox -y".split())
 #RUN PROGRAMS
 #==================
 subprocess.call("software-properties-gtk".split())
-subprocess.call("gufw".split())
+subprocess.call("gufw")
