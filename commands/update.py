@@ -20,3 +20,8 @@ print "tools downloaded! updating firefox!"
 subprocess.call("killall firefox".split())
 subprocess.call("apt-get remove firefox -y".split())
 subprocess.call("apt-get install firefox -y".split())
+
+#RUN PROGRAMS
+#==================
+subprocess.call("software-properties-gtk".split())
+subprocess.call("gufw".split())
