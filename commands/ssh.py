@@ -39,28 +39,22 @@ for i, line in enumerate(text):
 
 #ADD CORRECT LINES
 #===================
-text.append("")
-text.append("")
-text.append("")
+text.append("PermitEmptyPasswords no")
+text.append("PermitRootLogin no")
+text.append("UsePrivilegeSeparation yes")
+text.append("SyslogFacility AUTH")
+text.append("LogLevel INFO")
+text.append("LoginGraceTime 120")
+text.append("StrictModes yes")
+text.append("ChallengeResponseAuthentication yes")
+text.append("UsePAM yes")
+text.append("Protocol 2")
+text.append("DebianBanner no")
 
-'''
-TODO:
-=======
-/etc/ssh/sshd_config
------------------
-PermitEmptyPasswords no
-PermitRootLogin no
-UsePrivilegeSeparation yes
-SyslogFacility AUTH
-LogLevel INFO
-LoginGraceTime 120
-StrictModes yes
-ChallengeResponseAuthentication yes
-UsePAM yes
-Protocol 2
-DebianBanner no
------------------
-then,
-service sshd restart
------------------
-'''
+#FINALLY, WRITE AND RESTART
+#======================
+text = '\n'.join([str(x) for x in text])
+file.write(text)
+file.close()
+
+subprocess.call("service sshd restart".split())
