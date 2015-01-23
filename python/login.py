@@ -24,5 +24,15 @@ for i, line in enumerate(text):
 
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
-
 text = '\n'.join([str(x) for x in text])
+common_pass.write(text)
+common_pass.close()
+
+#EDITING common-auth
+#=================
+text = common_auth.read().strip("\n").split("\n")
+
+text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
+text = '\n'.join([str(x) for x in text])
+common_auth.write(text)
+common_auth.close()
