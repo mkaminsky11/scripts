@@ -11,18 +11,15 @@ some cyberpatriot scripts to make things easier.
 
 ## REQUIREMENTS
 * Ubuntu (tested on 12.04)
-* node.js and npm installed (see [here](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server))
-* guts
+* Python installed
 
 ## HOW TO USE
 ```shell
 sudo apt-get install git
-sudo apt-get install nodejs # install node.js
-sudo apt-get install npm # install npm
 git clone https://github.com/mkaminsky11/cyberpatriot.git
 cd cyberpatriot
 cd commands # has all of the commands to run
-node update.js # or whatever other file you want
+sudo python update.py #or whatever other command you want to run
 ```
 
 ## COMMANDS
@@ -57,17 +54,17 @@ this locks the root account. It's in its own file so that you don't run it by ac
 > The MIT License (MIT)
 >
 > Copyright (c) 2015 Michael Kaminsky
-> 
+>
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
 > in the Software without restriction, including without limitation the rights
 > to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 > copies of the Software, and to permit persons to whom the Software is
 > furnished to do so, subject to the following conditions:
-> 
+>
 > The above copyright notice and this permission notice shall be included in
 > all copies or substantial portions of the Software.
-> 
+>
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 > IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 > FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
