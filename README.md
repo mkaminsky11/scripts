@@ -9,7 +9,7 @@ some cyberpatriot scripts to make things easier.
 ###### Q: WHAT'S UP WITH auth.txt AND admin.txt?
 ###### A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run `users.py`, it will tell you what to do. Simple, right?
 
-###### Q: WHY PYTHON
+###### Q: WHY PYTHON?
 ###### A: I tried Node.js, but it proved to cumbersome to set up on the Ubuntu machines, especially older versions. Furthermore, because it's non-blocking, it became difficult to execute a series of commands. Bash works better for commands, but it is difficult to do string manipulation. Python has neither of these problems, and is built into the Ubuntu machines.
 
 ## REQUIREMENTS
