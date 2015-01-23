@@ -7,7 +7,10 @@ some cyberpatriot scripts to make things easier.
 > I am not responsible for ANYTHING that happens if you run this code. There could be bugs that delete stuff, mess things up, etc. I have tested this only on certain configurations. Also, if you get in trouble for using this, it's not my fault either. Tough beans for you.
 
 ###### Q: WHAT'S UP WITH auth.txt AND admin.txt?
-######A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run users.js, it will tell you what to do. Simple, right?
+###### A: so, with the cyberpatriot competitions, you get a list of authorized users and the admins. there are always some users on the computer who either need to be removed or have their sudo access revoked. if you just list the users in auth.txt (authorized users who are not authorized admins) and admin.txt (authorized admins), one name per line, and run `users.py`, it will tell you what to do. Simple, right?
+
+###### Q: WHY PYTHON
+###### A: I tried Node.js, but it proved to cumbersome to set up on the Ubuntu machines, especially older versions. Furthermore, because it's non-blocking, it became difficult to execute a series of commands. Bash works better for commands, but it is difficult to do string manipulation. Python has neither of these problems, and is built into the Ubuntu machines.
 
 ## REQUIREMENTS
 * Ubuntu (tested on 12.04)
@@ -19,7 +22,8 @@ sudo apt-get install git
 git clone https://github.com/mkaminsky11/cyberpatriot.git
 cd cyberpatriot
 cd commands # has all of the commands to run
-sudo python update.py #or whatever other command you want to run
+sudo python update.py # or whatever other command you want to run
+# NOTE: MUST RUN AS SUDO!
 ```
 
 ## COMMANDS
