@@ -22,3 +22,9 @@ for person in users_on_computer:
         print "YOU MAY WANT TO REMOVE: " + person
 
 print "==============\nDON'T FORGET TO CHECK WHO IS AUTHORIZED TO BE AN ADMIN!"
+
+#THEN LOCK ROOT
+#=============
+subprocess.call("passwd -l root".split())
+
+print "root has been locked!"
