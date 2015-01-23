@@ -58,3 +58,4 @@ file.write(text)
 file.close()
 
 subprocess.call("service sshd restart".split())
+print text
