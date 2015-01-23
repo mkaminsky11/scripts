@@ -1,6 +1,6 @@
 import subprocess
 
-print "Cyberpatriot script starting..."
+print "script starting..."
 
 #REMOVE TELNET
 #====================

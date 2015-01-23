@@ -1,6 +1,11 @@
 import subprocess
 
-print "Cyberpatriot script starting..."
+print "script starting..."
+
+#DELETE ALL AUTHORIZED KEYS
+#===================
+proc = subprocess.Popen("rm -rf /home/*/.ssh", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+out, erro = proc.communicate()
 
 #FIRST, MAKE A BACKUP
 #=======================

@@ -1,6 +1,6 @@
 import subprocess
 
-print "Cyberpatriot script starting..."
+print "script starting..."
 
 #YOU'RE GOING TO BE EDITING /etc/pam.d/common-password, /etc/pam.d/common-auth, and /etc/login.defs
 #=======================

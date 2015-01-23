@@ -1,6 +1,6 @@
 import subprocess
 
-print "Cyberpatriot script starting..."
+print "script starting..."
 
 #FIRST, MAKE A BACKUP
 #=======================
@@ -21,7 +21,7 @@ for i, line in enumerate(text):
         text[i] = ""
     elif ("chroot_local_user" in line) == True:
         text[i] = ""
-        
+
 #ADD NEW LINES
 #====================
 text.append("anonymous_enable=NO")
