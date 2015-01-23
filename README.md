@@ -44,7 +44,7 @@ configures login stuff, like password length, root login, etc.
 ### malware [done]
 scans for malware and other nasty stuff.
 
-### ftp
+### ftp [done]
 configures ftp.
 
 ### users [done]
