@@ -7,6 +7,7 @@ print "script starting..."
 subprocess.call("apt-get update -y".split())
 subprocess.call("apt-get upgrade -y".split())
 subprocess.call("apt-get autoremove -y".split())
+subprocess.call("apt-get autoclean -y".split())
 
 print "basic updates done! downloading tools!"
 
@@ -32,5 +33,5 @@ subprocess.call("chkrootkit")
 
 #UPDATE DIST
 #===============
-print "updating dist...."
+print "updating dist....this may take a while"
 subprocess.call("apt-get dist-upgrade -y".split())
