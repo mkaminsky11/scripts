@@ -24,7 +24,8 @@ if (os.path.exists("../admin.txt") == True and os.path.exists("../auth.txt") == 
             print "YOU MAY WANT TO REMOVE: " + person
 
     print "==============\nDON'T FORGET TO CHECK WHO IS AUTHORIZED TO BE AN ADMIN!"
-else "admin.txt or auth.txt do not exist"
+else:
+    print "admin.txt or auth.txt do not exist"
 
 #THEN LOCK ROOT
 #=============
