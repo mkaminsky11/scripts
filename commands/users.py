@@ -39,4 +39,4 @@ if os.path.exists("/etc/lightdm/lightdm.conf") == True:
 
     print "guest locked!"
 else:
-    "/etc/lightdm/lightdm.conf does not exist"
+    print "/etc/lightdm/lightdm.conf does not exist"
