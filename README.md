@@ -15,13 +15,22 @@ some scripts to make things easier.
 * Python installed
 
 ## HOW TO USE
+first, get everything you need
 ```shell
-sudo apt-get install git
+sudo apt-get install git #may be "git-core" for older systems
 git clone https://github.com/mkaminsky11/scripts.git
 cd scripts
-cd commands # has all of the commands to run
-sudo python update.py # or whatever other command you want to run
-# NOTE: MUST RUN AS SUDO!
+```
+
+you can just take the easy route with `main.py`. However, this will not run files like `remove_nfs.py`.
+```shell
+sudo python main.py #MUST be sudo!
+```
+
+or do it manually.
+```shell
+cd commands
+sudo python update.py #MUST be sudo!
 ```
 
 ## COMMANDS
