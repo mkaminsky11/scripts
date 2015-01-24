@@ -20,6 +20,15 @@ login = open("/etc/login.defs","r+")
 #=======================
 text = common_pass.read().strip("\n").split("\n")
 
+for i in range(len(text)):
+    line = text[i]
+    if ("pam_unix.so" in line) == True:
+        text[i] = ""
+    if ("pam_cracklib.so" in line) == True:
+        text[i] = ""
+    if ("pam_pwhistory.so" in line) == True:
+        text[i] = ""
+
 text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow")
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
@@ -31,6 +40,11 @@ common_pass.close()
 #=================
 text = common_auth.read().strip("\n").split("\n")
 
+for i in range(len(text)):
+    line = text[i]
+    if ("pam_cracklib.so" in line) == True:
+        text[i] = ""
+
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text = '\n'.join([str(x) for x in text])
 common_auth.write(text)
@@ -39,7 +53,8 @@ common_auth.close()
 #EDITING login
 #=======================
 text = login.read().strip("\n").split("\n")
-for i, line in enumerate(text):
+for i in range(len(text)):
+    line = text[i]
     if ("PASS_MIN_DAYS" in line) == True:
         text[i] = "PASS_MIN_DAYS 7"
     elif ("PASS_WARN_AGE" in line) == True:
@@ -50,3 +65,7 @@ for i, line in enumerate(text):
 text = '\n'.join([str(x) for x in text])
 login.write(text)
 login.close()
+
+#LOCK DOWN ON /etc/shadow
+#====================
+subprocess.call("chmod o-r /etc/shadow".split())
