@@ -19,6 +19,33 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
     file = open("/etc/ssh/sshd_config","r+")
     text = file.read().strip("\n").split("\n")
 
+    #REMOVE POTENTIALLY OFFENDING LINES
+    for i in range(len(text)):
+        line = text[i]
+        if ("PermitEmptyPasswords" in line) == True:
+            text[i] = ""
+        if ("PermitRootLogin" in line) == True:
+            text[i] = ""
+        if ("UsePrivilegeSeparation" in line) == True:
+            text[i] = ""
+        if ("SyslogFacility" in line) == True:
+            text[i] = ""
+        if ("LogLevel" in line) == True:
+            text[i] = ""
+        if ("LoginGraceTime" in line) == True:
+            text[i] = ""
+        if ("StrictModes" in line) == True:
+            text[i] = ""
+        if ("ChallengeResponseAuthentication" in line) == True:
+            text[i] = ""
+        if ("UsePAM" in line) == True:
+            text[i] = ""
+        if ("Protocol" in line) == True:
+            text[i] = ""
+        if ("DebianBanner" in line) == True:
+            text[i] = ""
+
+
     #ADD CORRECT LINES
     #===================
     text.append("PermitEmptyPasswords no")
@@ -36,7 +63,10 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
     #FINALLY, WRITE AND RESTART
     #======================
     text = '\n'.join([str(x) for x in text])
+
+    file.seek(0)
     file.write(text)
+    file.truncate()
     file.close()
 
     subprocess.call("service sshd restart".split())

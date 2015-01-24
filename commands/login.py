@@ -33,7 +33,10 @@ text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_aut
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
 text = '\n'.join([str(x) for x in text])
+
+common_pass.seek(0)
 common_pass.write(text)
+common_pass.truncate()
 common_pass.close()
 
 #EDITING common-auth
@@ -47,7 +50,10 @@ for i in range(len(text)):
 
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text = '\n'.join([str(x) for x in text])
+
+common_auth.seek(0)
 common_auth.write(text)
+common_auth.truncate()
 common_auth.close()
 
 #EDITING login
@@ -63,7 +69,10 @@ for i in range(len(text)):
         text[i] = "PASS_MAX_DAYS 90"
 
 text = '\n'.join([str(x) for x in text])
+
+login.seek(0)
 login.write(text)
+login.truncate()
 login.close()
 
 #LOCK DOWN ON /etc/shadow
