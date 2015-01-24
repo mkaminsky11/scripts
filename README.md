@@ -1,4 +1,4 @@
-![lock logo](img/lock.png =250x)
+<img src="img/lock.png" width="350">
 
 # SCRIPTS
 some scripts to harden Ubuntu security.
