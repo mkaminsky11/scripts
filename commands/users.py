@@ -28,3 +28,10 @@ print "==============\nDON'T FORGET TO CHECK WHO IS AUTHORIZED TO BE AN ADMIN!"
 subprocess.call("passwd -l root".split())
 
 print "root has been locked!"
+
+#LOCK GUEST
+#============
+proc = subprocess.Popen("echo 'allow-guest=false' | /etc/lightdm/lightdm.conf", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+out, erro = proc.communicate()
+
+print "guest locked!"

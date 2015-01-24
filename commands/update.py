@@ -29,3 +29,8 @@ subprocess.call("apt-get install firefox -y".split())
 subprocess.call("software-properties-gtk".split())
 subprocess.call("gufw")
 subprocess.call("chkrootkit")
+
+#UPDATE DIST
+#===============
+print "updating dist...."
+subprocess.call("apt-get dist-upgrade -y".split())
