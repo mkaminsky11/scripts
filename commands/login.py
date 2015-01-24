@@ -19,12 +19,8 @@ login = open("/etc/login.defs","r+")
 #EDITING common-password
 #=======================
 text = common_pass.read().strip("\n").split("\n")
-for i, line in enumerate(text):
-    if ("[success=1 default=ignore]" in line) == True:
-        text[i] = "password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow"
-    elif ("pam_cracklib.so" in line) == True:
-        text[i] = ""
 
+text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow")
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
 text = '\n'.join([str(x) for x in text])

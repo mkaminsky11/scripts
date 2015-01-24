@@ -14,16 +14,6 @@ if os.path.exists("/etc/vsftpd.conf") == True:
     file = open("/etc/vsftpd.conf","r+")
     text = file.read().strip("\n").split("\n")
 
-    for i, line in enumerate(text):
-        if ("anonymous_enable" in line) == True:
-            text[i] = ""
-        elif ("local_enable" in line) == True:
-            text[i] = ""
-        elif ("write_enable" in line) == True:
-            text[i] = ""
-        elif ("chroot_local_user" in line) == True:
-            text[i] = ""
-
     #ADD NEW LINES
     #====================
     text.append("anonymous_enable=NO")
@@ -38,6 +28,5 @@ if os.path.exists("/etc/vsftpd.conf") == True:
     file.close()
 
     subprocess.call("service vsftpd restart".split())
-    print text
 else:
     print "/etc/vsftpd.conf does not exist!"

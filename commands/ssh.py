@@ -14,35 +14,10 @@ subprocess.call("cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup".split())
 
 #THEN, READ IT
 #=====================
-file = open(" /etc/ssh/sshd_config","r+")
-text = file.read().strip("\n").split("\n")
 
 if os.path.exists("/etc/ssh/sshd_config") == True:
-    #REMOVE POTENTIALLY OFFENDING LINES
-    #==================
-    for i, line in enumerate(text):
-        if ("PermitEmptyPasswords" in line) == True:
-            text[i] = ""
-        elif ("PermitRootLogin" in line) == True:
-            text[i] = ""
-        elif ("UsePrivilegeSeparatio" in line) == True:
-            text[i] = ""
-        elif ("SyslogFacility" in line) == True:
-            text[i] = ""
-        elif ("LogLevel" in line) == True:
-            text[i] = ""
-        elif ("LoginGraceTime" in line) == True:
-            text[i] = ""
-        elif ("StrictModes" in line) == True:
-            text[i] = ""
-        elif ("ChallengeResponseAuthentication" in line) == True:
-            text[i] = ""
-        elif ("UsePAM" in line) == True:
-            text[i] = ""
-        elif ("Protocol" in line) == True:
-            text[i] = ""
-        elif ("DebianBanner" in line) == True:
-            text[i] = ""
+    file = open("/etc/ssh/sshd_config","r+")
+    text = file.read().strip("\n").split("\n")
 
     #ADD CORRECT LINES
     #===================
@@ -65,6 +40,5 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
     file.close()
 
     subprocess.call("service sshd restart".split())
-    print text
 else:
     print "/etc/ssh/sshd_config does not exist"
