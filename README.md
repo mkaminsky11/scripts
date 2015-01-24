@@ -17,7 +17,7 @@ some scripts to make things easier.
 ## HOW TO USE
 ```shell
 sudo apt-get install git
-git clone https://github.com/mkaminsky11/cyberpatriot.git
+git clone https://github.com/mkaminsky11/scripts.git
 cd scripts
 cd commands # has all of the commands to run
 sudo python update.py # or whatever other command you want to run

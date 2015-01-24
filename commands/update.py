@@ -10,7 +10,7 @@ subprocess.call("apt-get autoremove -y".split())
 
 print "basic updates done! downloading tools!"
 
-subprocess.call("apt-getinstall unattended-upgrades -y".split())
+subprocess.call("apt-get install unattended-upgrades -y".split())
 subprocess.call("dpkg-reconfigure -plow unattended-upgrades".split())
 tools_array = ["libpam-cracklib", "nmap", "gufw", "rkhunter", "chkrootkit"]
 tools = "apt-get install " + ' '.join([str(x) for x in tools_array]) + " -y"
