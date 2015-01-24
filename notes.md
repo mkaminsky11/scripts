@@ -10,3 +10,8 @@ output may be something like:
 root    ALL=(ALL) ALL
 ```
 make sure that everything is ok.
+
+######2. make sure certain things are updated
+* bash (bash)
+* ssh (openssh-server)
+* samba (samba)

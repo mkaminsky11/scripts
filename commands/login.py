@@ -1,4 +1,5 @@
 import subprocess
+import os.path
 
 print "script starting..."
 
