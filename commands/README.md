@@ -1,9 +1,9 @@
 # COMMANDS
 the individual parts of `main.py`
 
-### `main.py` does not run all of the scripts.
+__`main.py` does not run all of the scripts.__
 not run:
 * ftp.py
 * remove_nfs.py
 * remove_telnet.py
-* ufw.py
+* ufw.py (firewall)

@@ -1,5 +1,7 @@
+![lock logo](img/lock.png)
+
 # SCRIPTS
-some scripts to make things easier.
+some scripts to harden Ubuntu security.
 
 ## INTRODUCTION
 
@@ -7,11 +9,11 @@ some scripts to make things easier.
 > I am not responsible for ANYTHING that happens if you run this code. There could be bugs that delete stuff, mess things up, etc. I have tested this only on certain configurations. Also, if you get in trouble for using this, it's not my fault either. Tough beans for you.
 
 
-###### Q: WHY PYTHON?
-###### A: I tried Node.js, but it proved to cumbersome to set up on the Ubuntu machines, especially older versions. Furthermore, because it's non-blocking, it became difficult to execute a series of commands. Bash works better for commands, but it is difficult to do string manipulation. Python has neither of these problems, and is built into the Ubuntu machines.
+Q: WHY PYTHON?
+A: I tried Node.js, but it proved to cumbersome to set up on the Ubuntu machines, especially older versions. Furthermore, because it's non-blocking, it became difficult to execute a series of commands. Bash works better for commands, but it is difficult to do string manipulation. Python has neither of these problems, and is built into the Ubuntu machines.
 
 ## REQUIREMENTS
-* Ubuntu (tested on 12.04)
+* Ubuntu (tested on 12.04 and 10)
 * Python installed
 
 ## HOW TO USE
