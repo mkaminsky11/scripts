@@ -31,12 +31,12 @@ sudo python main.py #MUST be sudo!
 
 or do it manually.
 ```shell
-cd commands
+cd basic #or some other folder/python file
 sudo python update.py #MUST be sudo!
 ```
 
-## COMMANDS
-Each of the commands do different things, so you can run those that fit the scenario you're dealing with. Just run the appropriate python files.
+## BASIC, CONFIG, etc.
+The files are grouped into folders. Each of the files in these folders can be executed, so you can run whichever ones you need.
 
 ## LICENSE
 
