@@ -49,7 +49,7 @@ for i in range(len(text)):
         text[i] = ""
 
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
-text = '\n'.join([str(x) for x in text])
+text = "\n".join([str(x) for x in text])
 
 common_auth.seek(0)
 common_auth.write(text)
@@ -68,7 +68,7 @@ for i in range(len(text)):
     elif ("PASS_MAX_DAYS" in line) == True:
         text[i] = "PASS_MAX_DAYS 90"
 
-text = '\n'.join([str(x) for x in text])
+text = "\n".join([str(x) for x in text])
 
 login.seek(0)
 login.write(text)
