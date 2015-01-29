@@ -1,7 +1,5 @@
 import subprocess
 
-print "script starting..."
-
 #GET VERSION
 #==============
 p = subprocess.Popen("lsb_release -r", stdout=subprocess.PIPE, shell=True)

@@ -1,8 +1,6 @@
 import subprocess
 import os.path
 
-print "script starting..."
-
 #FIRST GET ALL USERS
 #=====================
 p = subprocess.Popen("ls /home".split(), stdout=subprocess.PIPE)

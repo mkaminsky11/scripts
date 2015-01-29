@@ -1,7 +1,5 @@
 import subprocess
 
-print "script starting..."
-
 #DISABLE ALL THE THINGS!
 #=====================
 #not exactly sure what these do

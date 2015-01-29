@@ -1,8 +1,6 @@
 import subprocess
 import os.path
 
-print "script starting..."
-
 #DELETE ALL AUTHORIZED KEYS
 #==========================
 proc = subprocess.Popen("rm -rf /home/*/.ssh", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

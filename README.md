@@ -8,9 +8,7 @@ some scripts to harden Ubuntu security.
 > #### WARNING!
 > I am not responsible for ANYTHING that happens if you run this code. There could be bugs that delete stuff, mess things up, etc. I have tested this only on certain configurations. Also, if you get in trouble for using this, it's not my fault either. Tough beans for you.
 
-
-Q: WHY PYTHON?
-A: I tried Node.js, but it proved to cumbersome to set up on the Ubuntu machines, especially older versions. Furthermore, because it's non-blocking, it became difficult to execute a series of commands. Bash works better for commands, but it is difficult to do string manipulation. Python has neither of these problems, and is built into the Ubuntu machines.
+These scripts are designed to improve the security of an Ubuntu machine. It is recommended that you run each command separately, rather than just `main.py`, because there is a lot of output, and seeing it all at once can be confusing.
 
 ## REQUIREMENTS
 * Ubuntu (tested on 12.04 and 10)

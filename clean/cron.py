@@ -1,7 +1,5 @@
 import subprocess
 
-print "script starting..."
-
 #LIST ALL CRON JOBS
 #=====================
 subprocess.call("crontab -l".split())

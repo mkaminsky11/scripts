@@ -1,7 +1,5 @@
 import subprocess
 
-print "script starting..."
-
 #DO BASIC UPGRADES
 #=====================
 subprocess.call("apt-get update -y".split())

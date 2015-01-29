@@ -1,8 +1,6 @@
 import subprocess
 import os.path
 
-print "script starting..."
-
 #FIRST, MAKE A BACKUP
 #=======================
 subprocess.call("sudo apt-get install vsftpd -y".split()) #actually, first make sure that you have ftp
