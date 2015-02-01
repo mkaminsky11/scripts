@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Scripts by mkaminsky11</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Scripts</h1>
+        <p>some scripts to harden ubuntu machines</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/mkaminsky11/scripts" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/mkaminsky11/scripts/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/mkaminsky11/scripts/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="scripts" class="anchor" href="#scripts" aria-hidden="true"><span class="octicon octicon-link"></span></a>SCRIPTS</h1>
+
+<p>some scripts to harden Ubuntu security.</p>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>INTRODUCTION</h2>
+
+<blockquote>
+<h4>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>WARNING!</h4>
+
+<p>I am not responsible for ANYTHING that happens if you run this code. There could be bugs that delete stuff, mess things up, etc. I have tested this only on certain configurations. Also, if you get in trouble for using this, it's not my fault either. Tough beans for you.</p>
+</blockquote>
+
+<p>These scripts are designed to improve the security of an Ubuntu machine. It is recommended that you run each command separately, rather than just <code>main.py</code>, because there is a lot of output, and seeing it all at once can be confusing.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>REQUIREMENTS</h2>
+
+<ul>
+<li>Ubuntu (tested on 12.04 and 10)</li>
+<li>Python installed</li>
+</ul>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>HOW TO USE</h2>
+
+<p>first, get everything you need</p>
+
+<div class="highlight highlight-shell"><pre>sudo apt-get install git <span class="pl-c">#may be "git-core" for older systems</span>
+git clone https://github.com/mkaminsky11/scripts.git
+<span class="pl-s3">cd</span> scripts</pre></div>
+
+<p>you can just take the easy route with <code>main.py</code>. However, this will not run files like <code>remove_nfs.py</code>.</p>
+
+<div class="highlight highlight-shell"><pre>sudo python main.py <span class="pl-c">#MUST be sudo!</span></pre></div>
+
+<p>or do it manually.</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> basic <span class="pl-c">#or some other folder/python file</span>
+sudo python update.py <span class="pl-c">#MUST be sudo!</span></pre></div>
+
+<h2>
+<a id="basic-config-etc" class="anchor" href="#basic-config-etc" aria-hidden="true"><span class="octicon octicon-link"></span></a>BASIC, CONFIG, etc.</h2>
+
+<p>The files are grouped into folders. Each of the files in these folders can be executed, so you can run whichever ones you need.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>LICENSE</h2>
+
+<blockquote>
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Michael Kaminsky</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+</blockquote>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/mkaminsky11">mkaminsky11</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
