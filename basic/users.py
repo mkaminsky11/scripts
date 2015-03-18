@@ -3,6 +3,7 @@ import os.path
 
 #FIRST GET ALL USERS
 #=====================
+# there's probably a better way to do this
 p = subprocess.Popen("ls /home".split(), stdout=subprocess.PIPE)
 output, err = p.communicate()
 users_on_computer = output.split("\n")
@@ -24,6 +25,11 @@ if (os.path.exists("../admin.txt") == True and os.path.exists("../auth.txt") == 
     print "==============\nDON'T FORGET TO CHECK WHO IS AUTHORIZED TO BE AN ADMIN!"
 else:
     print "admin.txt or auth.txt do not exist"
+
+
+# the above code needs serious work!!
+# !!
+# !!
 
 #THEN LOCK ROOT
 #=============

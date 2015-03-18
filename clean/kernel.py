@@ -2,7 +2,7 @@ import subprocess
 
 #DISABLE ALL THE THINGS!
 #=====================
-#not exactly sure what these do
+#not exactly sure what these do, but they look ok
 subprocess.call("sysctl kernel.randomize_va_space=1".split())
 subprocess.call("sysctl net.ipv4.conf.all.rp_filter=1".split())
 subprocess.call("sysctl net.ipv4.conf.all.accept_source_route=0".split())

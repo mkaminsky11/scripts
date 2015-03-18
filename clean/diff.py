@@ -1,3 +1,9 @@
+# A WORK IN PROGRESS
+# looks at the installed packages
+# compares them to the defaults for that version
+# outputs diff
+# doesn't actually change anything
+
 import subprocess
 
 #GET VERSION
