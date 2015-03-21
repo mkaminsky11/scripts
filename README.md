@@ -1,7 +1,7 @@
 <img src="img/lock.png" width="500">
 
 # SCRIPTS
-some scripts to harden Ubuntu security. Also see it [here](https://mkaminsky11.github.io/scripts)
+some scripts to harden Ubuntu security.
 
 ## INTRODUCTION
 

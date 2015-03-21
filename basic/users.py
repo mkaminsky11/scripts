@@ -1,35 +1,22 @@
 import subprocess
 import os.path
 
+
+#REMOVING THIS BECAUSE IT NEEDS TO BE REDONE
+
 #FIRST GET ALL USERS
 #=====================
-# there's probably a better way to do this
-p = subprocess.Popen("ls /home".split(), stdout=subprocess.PIPE)
+# this gets all human users
+# before, just got all in "/home"
+p = subprocess.Popen("cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1".split(), stdout=subprocess.PIPE)
 output, err = p.communicate()
 users_on_computer = output.split("\n")
 
-if (os.path.exists("../admin.txt") == True and os.path.exists("../auth.txt") == True):
-    #THEN READ USERS FROM TEXT FILE
-    #========================
-    admin_auth = open('../admin.txt', 'r').read().strip("\n").split("\n")
-    not_admin_auth = open('../auth.txt', 'r').read().strip("\n").split("\n")
-    all_auth = admin_auth + not_admin_auth
 
-    #COMPRARE THE TWO
-    #==================
-    for person in users_on_computer:
-        if (person in all_auth) == False:
-            #he's not in the authorized list
-            print "YOU MAY WANT TO REMOVE: " + person
+# removed reading auth.txt/admin.txt (it's clunky)
+# WHAT NEXT?
+# have script parse the README provided by cyberpatriot to find its list of admins and users (TODO)
 
-    print "==============\nDON'T FORGET TO CHECK WHO IS AUTHORIZED TO BE AN ADMIN!"
-else:
-    print "admin.txt or auth.txt do not exist"
-
-
-# the above code needs serious work!!
-# !!
-# !!
 
 #THEN LOCK ROOT
 #=============
