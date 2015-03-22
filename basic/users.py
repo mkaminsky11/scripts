@@ -12,6 +12,15 @@ p = subprocess.Popen("cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -
 output, err = p.communicate()
 users_on_computer = output.split("\n")
 
+sudo_groups = ["sudo", "su", "sudoers", "wheel", "staff"]
+for group in sudo_groups:
+    get_users_in_group(group)
+
+def get_users_in_group(groups):
+    
+    #command: getent group groupname | awk -F: '{print $4}'
+
+
 
 # removed reading auth.txt/admin.txt (it's clunky)
 # WHAT NEXT?
