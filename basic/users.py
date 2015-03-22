@@ -49,3 +49,6 @@ if os.path.exists("/etc/lightdm/lightdm.conf") == True:
     print "guest locked!"
 else:
     print "/etc/lightdm/lightdm.conf does not exist"
+
+
+# python -c "import crypt, getpass, pwd; print crypt.crypt('password', '\$6\$SALTsalt\$')" #please let this work in a .py file!
