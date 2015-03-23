@@ -18,7 +18,7 @@ subprocess.call(tools.split())
 #UPDATE FIREFOX
 #======================
 print "tools downloaded! updating firefox!"
-
+#it's happended that "sudo apt-get update firefox" doesn't work
 subprocess.call("killall firefox".split())
 subprocess.call("apt-get remove firefox -y".split())
 subprocess.call("apt-get install firefox -y".split())
@@ -31,5 +31,6 @@ subprocess.call("chkrootkit")
 
 #UPDATE DIST
 #===============
+#you know, just because
 print "updating dist....this may take a while"
 subprocess.call("apt-get dist-upgrade -y".split())

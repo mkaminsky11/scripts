@@ -14,6 +14,7 @@ subprocess.call("cp /etc/login.defs /etc/login_backup.defs".split())
 
 #PREPARE FOR EDITING
 #===================
+#read both files
 common_pass = open("/etc/pam.d/common-password","r+")
 common_auth = open("/etc/pam.d/common-auth","r+")
 login = open("/etc/login.defs","r+")
@@ -21,7 +22,7 @@ login = open("/etc/login.defs","r+")
 #EDITING common-password
 #=======================
 text = common_pass.read().strip("\n").split("\n")
-
+#remove potentially offending lines
 for i in range(len(text)):
     line = text[i]
     if ("pam_unix.so" in line) == True:
@@ -35,7 +36,7 @@ text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_aut
 text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
 text = '\n'.join([str(x) for x in text])
-
+#update text
 common_pass.seek(0)
 common_pass.write(text)
 common_pass.truncate()
@@ -44,7 +45,7 @@ common_pass.close()
 #EDITING common-auth
 #=================
 text = common_auth.read().strip("\n").split("\n")
-
+#remove potentially offending lines
 for i in range(len(text)):
     line = text[i]
     if ("pam_cracklib.so" in line) == True:
