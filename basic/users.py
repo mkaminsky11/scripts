@@ -1,6 +1,16 @@
 import subprocess
 import os.path
 
+readme = open("../readme.txt","r+")
+text = readme.read()
+readme.close()
+
+authorize_users_text = text.split("Authorized Administrators:\n")[1].split("Authorized Users:")[0].strip().split("\n")
+actual_authorized_users = []
+for line in authorized_users_text:
+    if ("password" in line) == False:
+        actual_authorized_users.append(line.replace(" (you)",""))
+        #TODO: test this + compare with list of users on computer
 
 #REMOVING THIS BECAUSE IT NEEDS TO BE REDONE
 
@@ -17,15 +27,8 @@ for group in sudo_groups:
     get_users_in_group(group)
 
 def get_users_in_group(groups):
-    
+    #TODO
     #command: getent group groupname | awk -F: '{print $4}'
-
-
-
-# removed reading auth.txt/admin.txt (it's clunky)
-# WHAT NEXT?
-# have script parse the README provided by cyberpatriot to find its list of admins and users (TODO)
-
 
 #THEN LOCK ROOT
 #=============
