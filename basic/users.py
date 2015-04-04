@@ -11,12 +11,14 @@ actual_authorized_admins = []
 for line in authorized_admins_text:
     if ("password" in line) == False:
         actual_authorized_admins.append(line.replace(" (you)","").strip())
+
 #get all authorized users
 authorize_users_text = text.split("Authorized Users:\n")[1].split("Do not remove any authorized users or their home")[0].strip().split("\n")
 actual_authorized_users = []
 for line in authorized_users_text:
     if line.strip() !== "":
         actual_authorized_users.append(line.strip())
+
 
 #FIRST GET ALL USERS
 #=====================
@@ -35,7 +37,15 @@ for group in sudo_groups:
         if (array_item in admins_on_computer) == False:
             admins_on_computer.append(array_item)
 
-#TODO: compare on computer vs. authorized
+#TODO: test this!
+for user in users_on_computer:
+    if(user in actual_authorized_users) == False:
+        #not in the users list
+        print(user + " should be made an admin or removed")
+for admin in admins_on_computer:
+    if(admin in actual_authorized_admins) == False:
+        #not in the admins list
+        print(admin + " should be made a regular user of removed")
 
 def get_users_in_group(groups):
     #TODO: test this
