@@ -49,7 +49,7 @@ for admin in admins_on_computer:
 
 def get_users_in_group(groups):
     #TODO: test this
-    p = subprocess.Popen("getent group groupname | awk -F: '{print $4}'".split(), stdout=subprocess.PIPE)
+    p = subprocess.Popen("getent group "+groups+" | awk -F: '{print $4}'".split(), stdout=subprocess.PIPE)
     output, err = p.communicate()
     return output.split("\n")
 
