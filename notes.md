@@ -32,3 +32,11 @@ find them using `lsof -i -n -P`
 crontab -e
 ```
 look if there are any things in `/etc/init.d` like "nc" (netcat)
+
+######7. change update settings
+Open update manager, go to `settings`, `updates`, and set checks to `daily`. Then, install all packages.
+
+
+#### Resources
++ [http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf](http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf)
++ [http://www.rjsystems.nl/en/2100-pam-debian.php](http://www.rjsystems.nl/en/2100-pam-debian.php)

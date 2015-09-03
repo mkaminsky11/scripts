@@ -25,15 +25,11 @@ text = common_pass.read().strip("\n").split("\n")
 #remove potentially offending lines
 for i in range(len(text)):
     line = text[i]
-    if ("pam_unix.so" in line) == True:
-        text[i] = ""
-    if ("pam_cracklib.so" in line) == True:
-        text[i] = ""
-    if ("pam_pwhistory.so" in line) == True:
+    if (("password" in line) == True:
         text[i] = ""
 
-text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow")
-text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
+text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow remeber=5")
+text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1")
 text.append("password    requisite           pam_pwhistory.so use_authtok remember=24 enforce_for_root")
 text = '\n'.join([str(x) for x in text])
 #update text
@@ -45,13 +41,7 @@ common_pass.close()
 #EDITING common-auth
 #=================
 text = common_auth.read().strip("\n").split("\n")
-#remove potentially offending lines
-for i in range(len(text)):
-    line = text[i]
-    if ("pam_cracklib.so" in line) == True:
-        text[i] = ""
-
-text.append("password    requisite           pam_cracklib.so retry=3 minlen=8 difok=3 reject_username minclass=3 maxrepeat=2 dcredit=1 ucredit=1 lcredit=1 ocredit=1")
+text.append("auth required pam_tally2.so deny=5 onerr=fail unlock_time=1800")
 text = "\n".join([str(x) for x in text])
 
 common_auth.seek(0)
@@ -65,9 +55,9 @@ text = login.read().strip("\n").split("\n")
 for i in range(len(text)):
     line = text[i]
     if ("PASS_MIN_DAYS" in line) == True:
-        text[i] = "PASS_MIN_DAYS 7"
+        text[i] = "PASS_MIN_DAYS 10"
     elif ("PASS_WARN_AGE" in line) == True:
-        text[i] = "PASS_WARN_AGE 14"
+        text[i] = "PASS_WARN_AGE 7"
     elif ("PASS_MAX_DAYS" in line) == True:
         text[i] = "PASS_MAX_DAYS 90"
 
