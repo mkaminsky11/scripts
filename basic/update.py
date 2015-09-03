@@ -7,7 +7,7 @@ subprocess.call("apt-get upgrade -y".split())
 subprocess.call("apt-get autoremove -y".split())
 subprocess.call("apt-get autoclean -y".split())
 
-print "basic updates done! downloading tools!"
+print("basic updates done! downloading tools!")
 
 subprocess.call("apt-get install unattended-upgrades -y".split())
 subprocess.call("dpkg-reconfigure -plow unattended-upgrades".split())
@@ -17,7 +17,7 @@ subprocess.call(tools.split())
 
 #UPDATE FIREFOX
 #======================
-print "tools downloaded! updating firefox!"
+print("tools downloaded! updating firefox!")
 #it's happended that "sudo apt-get update firefox" doesn't work
 subprocess.call("killall firefox".split())
 subprocess.call("apt-get remove firefox -y".split())
@@ -32,5 +32,5 @@ subprocess.call("chkrootkit")
 #UPDATE DIST
 #===============
 #you know, just because
-print "updating dist....this may take a while"
+print("updating dist....this may take a while")
 subprocess.call("apt-get dist-upgrade -y".split())

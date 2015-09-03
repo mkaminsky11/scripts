@@ -42,4 +42,4 @@ if os.path.exists("/etc/vsftpd.conf") == True:
 
     subprocess.call("service vsftpd restart".split())
 else:
-    print "/etc/vsftpd.conf does not exist!"
+    print("/etc/vsftpd.conf does not exist!")

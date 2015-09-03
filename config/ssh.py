@@ -69,4 +69,4 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
 
     subprocess.call("service sshd restart".split())
 else:
-    print "/etc/ssh/sshd_config does not exist"
+    print("/etc/ssh/sshd_config does not exist")

@@ -21,4 +21,4 @@ subprocess.call("sysctl net.ipv4.tcp_syncookies=1".split())
 subprocess.call("sysctl net.ipv4.icmp_ignore_bogus_error_responses=1".split())
 subprocess.call("sysctl -p".split())
 
-print "done!"
+print("done!")

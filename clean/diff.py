@@ -39,4 +39,4 @@ for line in installed:
     #reverse it, remove reverse of "install", re-reverse it, then strip whitespace
     new_line = line[::-1].replace("llatsni", "", 1)[::-1].strip()
     if (new_line in clean) == False:
-        print "You may want to remove: " + new_line
+        print("You may want to remove: " + new_line)

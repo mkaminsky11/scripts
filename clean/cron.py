@@ -18,4 +18,4 @@ text = output.split("\n")
 
 for line in text:
     if len(line) > 0 and line.strip(" ")[0] != "#" and line.strip(" ") != "exit 0" and line.strip(" ") != "":
-        print "something is in /etc/rc.local ... you should check it out"
+        print("something is in /etc/rc.local ... you should check it out")
