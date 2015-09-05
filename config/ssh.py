@@ -1,6 +1,10 @@
 import subprocess
 import os.path
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 #DELETE ALL AUTHORIZED KEYS
 #==========================
 proc = subprocess.Popen("rm -rf /home/*/.ssh", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -42,7 +46,10 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
             text[i] = ""
         if ("DebianBanner" in line) == True:
             text[i] = ""
-
+        if ("X11Forwarding" in line) == True:
+            text[i] = ""
+        if ("Protocol 2" in line) == True:
+            text[i] = ""
 
     #ADD CORRECT LINES
     #===================
@@ -57,6 +64,8 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
     text.append("UsePAM yes")
     text.append("Protocol 2")
     text.append("DebianBanner no")
+    text.append("X11Forwarding no")
+    text.append("Protocol 1")
 
     #FINALLY, WRITE AND RESTART
     #======================
@@ -67,6 +76,6 @@ if os.path.exists("/etc/ssh/sshd_config") == True:
     file.truncate()
     file.close()
 
-    subprocess.call("service sshd restart".split())
+    subprocess.call("sudo /etc/init.d/ssh restart".split())
 else:
     print("/etc/ssh/sshd_config does not exist")

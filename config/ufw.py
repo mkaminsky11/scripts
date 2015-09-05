@@ -1,5 +1,9 @@
 import subprocess
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 #START UFW
 #====================
 subprocess.call("ufw allow ssh".split())

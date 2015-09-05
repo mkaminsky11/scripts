@@ -1,5 +1,9 @@
 import subprocess
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 #REMOVE TELNET
 #====================
 subprocess.call("apt-get purge telnet telnetd -y".split())

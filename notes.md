@@ -9,34 +9,42 @@ output may be something like:
 ```shell
 root    ALL=(ALL) ALL
 ```
-make sure that everything is ok.
+make sure that everything is ok. Check to make sure no `NOPASSWD`
 
-######2. make sure certain things are updated and installed
-* bash (bash)
-* ssh (openssh-server)
-* samba (samba)
-* telnet (telnetd)
+######2. make sure that all games are removed
 
-######3. make sure that all games are removed
-
-######4. if not needed, stop telnet
+######3. if not needed, stop telnet
 ```shell
 sudo service telnet stop
 ```
 
-######5. remove unecessary services
+######4. remove unecessary services
 find them using `lsof -i -n -P`
 
-######6. check cron again
+######5. check cron again
 ```shell
 crontab -e
 ```
 look if there are any things in `/etc/init.d` like "nc" (netcat)
 
-######7. change update settings
-Open update manager, go to `settings`, `updates`, and set checks to `daily`. Then, install all packages.
+######6. remove all unauthorized users and admins
+Check the `readme` and the users on the computer
 
+######7. check `/etc/rc0.d`
+
+######8. check `~/.bash_login` and `~/.bash_logout`
+
+######9. look at `/etc/hosts`
+Defaults: 
+```
+127.0.0.1 localhost
+127.0.1.1 ubuntu
+```
+
+Ignore all lines that have `ip6` in them, comment out everything else.
 
 #### Resources
 + [http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf](http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf)
 + [http://www.rjsystems.nl/en/2100-pam-debian.php](http://www.rjsystems.nl/en/2100-pam-debian.php)
++ [https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh](https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh)
++ [https://github.com/sumwonyuno/cp-lockdown](https://github.com/sumwonyuno/cp-lockdown)

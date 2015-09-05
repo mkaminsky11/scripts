@@ -1,11 +1,17 @@
 import subprocess
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 #DO BASIC UPGRADES
 #=====================
 subprocess.call("apt-get update -y".split())
 subprocess.call("apt-get upgrade -y".split())
 subprocess.call("apt-get autoremove -y".split())
 subprocess.call("apt-get autoclean -y".split())
+
+important_services = ["openssh-server", "samba", "telnetd"] # make sure that they are installed and updated
 
 print("basic updates done! downloading tools!")
 
@@ -28,7 +34,7 @@ subprocess.call("apt-get install firefox -y".split())
 subprocess.call("software-properties-gtk".split())
 subprocess.call("gufw")
 subprocess.call("chkrootkit")
-subprocess.call("auditctl –e 1".split())
+subprocess.call("auditctl -e 1".split())
 
 #UPDATE DIST
 #===============

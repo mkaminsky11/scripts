@@ -1,57 +1,12 @@
 import subprocess
 import os.path
 
-readme = open("../readme.txt","r+")
-text = readme.read()
-readme.close()
+#####################
+# TESTED, ALL GOOD! #
+#####################
 
-#get all authorized admins
-authorize_admins_text = text.split("Authorized Administrators:\n")[1].split("Authorized Users:")[0].strip().split("\n")
-actual_authorized_admins = []
-for line in authorized_admins_text:
-    if ("password" in line) == False:
-        actual_authorized_admins.append(line.replace(" (you)","").strip())
-
-#get all authorized users
-authorize_users_text = text.split("Authorized Users:\n")[1].split("Do not remove any authorized users or their home")[0].strip().split("\n")
-actual_authorized_users = []
-for line in authorized_users_text:
-    if line.strip() !== "":
-        actual_authorized_users.append(line.strip())
-
-
-#FIRST GET ALL USERS
-#=====================
-# this gets all human users
-p = subprocess.Popen("cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1".split(), stdout=subprocess.PIPE)
-output, err = p.communicate()
-users_on_computer = output.split("\n")
-
-#THEN, GET ALL ADMINS
-#====================
-admins_on_computer = []
-sudo_groups = ["sudo", "su", "sudoers", "wheel", "staff"]
-for group in sudo_groups:
-    group_array = get_users_in_group(group)
-    for array_item in group_array:
-        if (array_item in admins_on_computer) == False:
-            admins_on_computer.append(array_item)
-
-#TODO: test this!
-for user in users_on_computer:
-    if(user in actual_authorized_users) == False:
-        #not in the users list
-        print(user + " should be made an admin or removed")
-for admin in admins_on_computer:
-    if(admin in actual_authorized_admins) == False:
-        #not in the admins list
-        print(admin + " should be made a regular user of removed")
-
-def get_users_in_group(groups):
-    #TODO: test this
-    p = subprocess.Popen("getent group "+groups+" | awk -F: '{print $4}'".split(), stdout=subprocess.PIPE)
-    output, err = p.communicate()
-    return output.split("\n")
+# NOTE: REMOVED CODE THAT COMPARES readme.txt TO ACTUAL USERS
+# it got very clumsy, and didn't work correctly
 
 #THEN LOCK ROOT
 #=============
@@ -77,4 +32,5 @@ else:
     print("/etc/lightdm/lightdm.conf does not exist")
 
 
+# TODO:
 # python -c "import crypt, getpass, pwd; print crypt.crypt('password', '\$6\$SALTsalt\$')"

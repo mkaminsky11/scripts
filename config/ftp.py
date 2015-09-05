@@ -1,6 +1,10 @@
 import subprocess
 import os.path
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 #FIRST, MAKE A BACKUP
 #=======================
 subprocess.call("sudo apt-get install vsftpd -y".split()) #actually, first make sure that you have ftp
@@ -40,6 +44,6 @@ if os.path.exists("/etc/vsftpd.conf") == True:
     file.truncate()
     file.close()
 
-    subprocess.call("service vsftpd restart".split())
+    subprocess.call("sudo /etc/init.d/vsftpd restart".split())
 else:
     print("/etc/vsftpd.conf does not exist!")

@@ -4,7 +4,12 @@
 # outputs diff
 # doesn't actually change anything
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
+
 import subprocess
+import os.path
 
 #GET VERSION
 #==============

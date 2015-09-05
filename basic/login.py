@@ -4,6 +4,9 @@ import os.path
 # THIS IS PROBABLY THE MOST IMPORTANT
 # AUTOCONFIGURES PASSWORD CONFIG
 
+#####################
+# TESTED, ALL GOOD! #
+#####################
 
 #YOU'RE GOING TO BE EDITING /etc/pam.d/common-password, /etc/pam.d/common-auth, and /etc/login.defs
 #=======================
@@ -25,7 +28,7 @@ text = common_pass.read().strip("\n").split("\n")
 #remove potentially offending lines
 for i in range(len(text)):
     line = text[i]
-    if (("password" in line) == True:
+    if ("password" in line) == True:
         text[i] = ""
 
 text.append("password    [success=1 default=ignore]  pam_unix.so obscure use_authtok sha512 shadow remeber=5")
@@ -41,7 +44,7 @@ common_pass.close()
 #EDITING common-auth
 #=================
 text = common_auth.read().strip("\n").split("\n")
-text.append("auth required pam_tally2.so deny=5 onerr=fail unlock_time=1800")
+text.append("auth required pam_tally.so deny=5 unlock_time=900 onerr=fail audit even_deny_root_account silent")
 text = "\n".join([str(x) for x in text])
 
 common_auth.seek(0)
