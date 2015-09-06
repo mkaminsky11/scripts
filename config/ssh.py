@@ -16,7 +16,6 @@ subprocess.call("cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup".split())
 
 #THEN, READ IT
 #=====================
-
 if os.path.exists("/etc/ssh/sshd_config") == True:
     file = open("/etc/ssh/sshd_config","r+")
     text = file.read().strip("\n").split("\n")

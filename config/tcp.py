@@ -11,7 +11,6 @@ subprocess.call("cp /etc/sysctl.conf /etc/sysctl_conf_backup".split())
 
 #THEN, READ IT
 #=====================
-
 if os.path.exists("/etc/sysctl.conf") == True:
     file = open("/etc/sysctl.conf","r+")
     text = file.read().strip("\n").split("\n")
@@ -23,7 +22,6 @@ if os.path.exists("/etc/sysctl.conf") == True:
     #FINALLY, WRITE AND RESTART
     #======================
     text = '\n'.join([str(x) for x in text])
-
     file.seek(0)
     file.write(text)
     file.truncate()

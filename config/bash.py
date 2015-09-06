@@ -6,17 +6,18 @@ import os.path
 #TODO: maybe to all users?
 
 #PREVENT TAMPERING WITH THESE FILES
+#==================================
 append_only = [".bash_history",".bash_profile",".bash_login",".profile",".bash_logout",".bashrc"]
 for appends in append_only:
     subprocess.call(("chattr +a ~/" + appends).split()) #set to append only
-    
 if os.path.exists("~/.bashrc") == False:
-    #want to create it
+
+    #CREATE IT
+    #===========
     subprocesses.call("touch ~/.bashrc".split())
     
 file = open("~/.bashrc","r+")
 text = file.read().strip("\n").split("\n")
-
 text.append("shopt -s histappend")
 text.append("readonly PROMPT_COMMAND="history -a" ")
 text.append("readonly HISTFILE")
@@ -33,6 +34,7 @@ file.truncate()
 file.close()
 
 #DISABLE OTHER SHELLS
+#=====================
 subprocesses.call("chmod 750 csh".spit())
 subprocesses.call("chmod 750 tcsh ".spit())
 subprocesses.call("chmod 750 ksh".spit())
