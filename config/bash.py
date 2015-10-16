@@ -14,7 +14,7 @@ if os.path.exists("~/.bashrc") == False:
 
     #CREATE IT
     #===========
-    subprocesses.call("touch ~/.bashrc".split())
+    subprocess.call("touch ~/.bashrc".split())
     
 file = open("~/.bashrc","r+")
 text = file.read().strip("\n").split("\n")
@@ -35,6 +35,6 @@ file.close()
 
 #DISABLE OTHER SHELLS
 #=====================
-subprocesses.call("chmod 750 csh".spit())
-subprocesses.call("chmod 750 tcsh ".spit())
-subprocesses.call("chmod 750 ksh".spit())
+subprocess.call("chmod 750 csh".spit())
+subprocess.call("chmod 750 tcsh ".spit())
+subprocess.call("chmod 750 ksh".spit())
