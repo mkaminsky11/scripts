@@ -50,3 +50,4 @@ Ignore all lines that have `ip6` in them, comment out everything else.
 + [http://www.rjsystems.nl/en/2100-pam-debian.php](http://www.rjsystems.nl/en/2100-pam-debian.php)
 + [https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh](https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh)
 + [https://github.com/sumwonyuno/cp-lockdown](https://github.com/sumwonyuno/cp-lockdown)
++ [http://www.tecmint.com/apache-security-tips/](http://www.tecmint.com/apache-security-tips/)
