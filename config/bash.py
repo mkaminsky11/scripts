@@ -19,7 +19,7 @@ if os.path.exists("~/.bashrc") == False:
 file = open("~/.bashrc","r+")
 text = file.read().strip("\n").split("\n")
 text.append("shopt -s histappend")
-text.append("readonly PROMPT_COMMAND="history -a" ")
+text.append('readonly PROMPT_COMMAND="history -a" ')
 text.append("readonly HISTFILE")
 text.append("readonly HISTFILESIZE")
 text.append("readonly HISTSIZE")
