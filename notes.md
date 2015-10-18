@@ -45,9 +45,12 @@ Ignore all lines that have `ip6` in them, comment out everything else.
 
 ### 10. Uninstall not needed application from `Ubuntu Software Center -> Installed Software`
 
+### 11. For the Ubuntu updates, make sure `install all important security updates` is selected
+
 ## Resources
 + [http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf](http://www.fdrseacadets.org/index_files/CPtraining/Unit_Eight.pdf)
 + [http://www.rjsystems.nl/en/2100-pam-debian.php](http://www.rjsystems.nl/en/2100-pam-debian.php)
 + [https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh](https://github.com/mike-bailey/CCDC-Scripts/blob/master/linux.sh)
 + [https://github.com/sumwonyuno/cp-lockdown](https://github.com/sumwonyuno/cp-lockdown)
 + [http://www.tecmint.com/apache-security-tips/](http://www.tecmint.com/apache-security-tips/)
++ [http://www.petefreitag.com/item/505.cfm](http://www.petefreitag.com/item/505.cfm)
