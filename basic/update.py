@@ -39,7 +39,7 @@ subprocess.call("auditctl -e 1".split())
 #CONFIGURE ANTIVIRUS
 #====================
 subprocess.call("freshclam".split()) #updates antivirus definitions
-subprocess.call("clamtk".split())
+# subprocess.call("clamtk".split())
 
 #UPDATE DIST
 #===============
